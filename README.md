@@ -1,1 +1,1 @@
-# -Hana-Kernel_MSM8627-Lineage_14.1
+# Hana-Kernel_MSM8627-Lineage_14.1
