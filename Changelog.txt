@@ -1,0 +1,243 @@
+Changelog :
+
+V1.3.8.1 UMI_R3 RELEASE : (Project UMI - Side Dev of HANA) 
+- Removed press power button to reboot from DT2W integration
+- Added Lulzactive CPU Governor
+- Revert back to GCC 4.9 Linaro toolchains
+- Try Hard float and optimize vfpv4 fpu
+- Revert back thermal change and add stock thermal
+
+V1.3.8 UMI_R2 RELEASE : (Project UMI - Side Dev of HANA) / (Project HANA)
+- Removed all custom hotplug and only use mpdecision as stock governor
+- Removed Intelli Thermal and change it with updated stock thermal engine
+- Removed Intellidemand CPU Governor
+- Optimized all CPU Governor to work in lower freq (below 1026Mhz)
+- Optimized kernel module
+- Removed Wheatley & Lionheart [TEMP for Lionheart] CPU Governor
+- Revert kernel name (back to HANA) 
+
+V1.3.7 UMI RELEASE: (Project UMI - Side Dev of HANA)
+- Added Intelli Plug & Removed MSM Hotplug
+- Added Lulzactive & Intellidemand CPU Governor
+- Added Dynamic Sync File Control & Dynamic Page Writeback
+- Change Optimizer from Ofast to O3 for kernel optimizer
+- Change Graphite algorithm
+- Change Toolchains from 6.2.1 to GCC 5.4.1 Linaro Optimized toolchains
+- Improve 3x faster integer sqrt
+- Optimized all custom CPU Governor
+- Optimized Fast Charge feature
+- Improve Intelli Thermal
+- Optimized for CPU Frequency table
+- Fixed low voltage for CPU problem 
+
+V1.3.6 YUME RELEASE: (Project HANA)
+- Added Alucard Hotplug & MSM Hotplug
+- Added Intelli Thermal (Re-adapt and re-place stock thermal)
+- Change to Permissive for SE Linux Status
+- Reconfigure and optimize CPU Governor
+- Reconfigure all hotplug manager
+- Update Thermal Engine
+- Disable Stock MPDecision
+- Misc fixes for kernel module
+- Added Frandom module
+
+V1.3.2 CRIMSON RELEASE: (Project HANA)
+- Change Graphite optimization algorithm
+- Change Hard floating point with full support NEON-VFPV4
+- Optimize GPU flags
+- Change to Ofast from O2 optimize for kernel module
+- Removed Smartass2 and added adaptive & wheatley CPU Governor
+
+V1.3.1 CRIMSON RELEASE: (Project HANA)
+- Change GCC to GCC 6.2.1 Crosstool-NG Toolchains
+- Re-added graphite optimization
+- Added smartass2,Optimax & remove lulzactive & Intellidemand CPU governor
+- Fixed error with MTP problem, (Disable auto USB Fastcharge)[Manual Activation]
+- Added NEON optimization for kernel
+
+V1.3.0 ZERO / FATAL RELEASE: (HANA Kernel REBOOT)
+- Revert back to linux kernel 3.4.0
+- Remove all custom hotplug (to fix error with 1.458Ghz)
+- Remove some Sakuractive,bioshock,cyan,adaptive & add Intellidemand CPU Governor
+- Revert back to GCC 5.4.0 Crosstool-NG Toolchains
+- Re-build from Lineage OS source kernel
+- Improve kernel stability
+- Reconfigure some voltage point on CPU
+- Revert all NEON-VFPV4 with ARM improvement
+- Remove Graphite Optimization (TEMP)
+- Revert improvement from cpuinit
+- Sync from latest Lineage OS source kernel 20170209
+
+V1.2.5 Stable RELEASE:
+- Merge Linux Kernel 3.4.18
+- Misc fixes for ARM Auto Hotplug
+- Sync from latest Lineage OS source kernel 20170206
+
+V1.2.5 TEST RELEASE :
+- Re-Added ARM Auto Hotplug  (To Fix error on core 1 that can't stuck at user frequency)
+- Re-Configure Alucard Hotplug (To fix error when set core more than 1GHz)
+- Added new CPU Governor (Sakuractive) and remove Smartass2 CPU Governor
+- Misc change for CPU Voltage Point
+- Re-Configure Android LMK for low RAM device
+- Re-Configure Frandom module to move to built-in feature
+- Re-Built Hana Kernel Builder script from base (optimize some script)
+- Increase Stability for kernel 
+- Sync from latest LineageOS kernel 20170118
+
+V1.2.4 STABLE RELEASE :
+- Merged Linux Kernel to 3.4.17
+- Removed ARM Auto Hotplug (Not needed and try to optimize custom hotplug)
+- Optimized Alucard Hotplug & CPU Governor for dual core device
+- Misc Fixes
+- Update sync from latest AOSP Source 20161220
+
+V1.2.3 STABLE RELEASE :
+- Merged Linux Kernel to 3.4.15
+- Removed MSM Turbo Boost
+- Misc Fixes for msm_rq_stats 
+- Reconfigure Intellidemand CPU Governor
+- Reconfigure Alucard CPU & Hotplug Governor
+- Fix for other custom governor
+- Revert commit "Improved Topology Algorithm"
+- Removed SavagedZen & Added Bioshock & Cyan CPU Governor
+
+V1.2.2 ALPHA RELEASE :
+- Re-added Alucard Hotplug with use MSM_RQ_STATS
+- Re-added AutoSMP Hotplug & ARM Auto Hotplug
+- Removed MSM MPDecision Hotplug (Fix error only online 1 core when use some freq (ex : 1.35Ghz))
+- Removed PegasusQ CPU Governor
+- Added SavagedZen CPU Governor
+- Major fix for custom cpu governor
+- Removed Intelli Thermal (Temporary) [Try to fix Overheating Issue]
+- Sync from latest CM14.1 Source 20161128
+
+V1.2.1 TEST RELEASE :
+- Merged Linux Kernel to 3.4.14
+- Added Frandom Module
+- Misc fixes for Intelli Thermal
+- Improve Utilization for Threshold CPU
+- Added PegasusQ,HYPER & Intellidemand CPU Governor
+- Removed Lulzactive & Smartmax CPU Governor
+- Added MSM Turbo Boost for CPU
+- Re-Tuning Alucard & Intelliactive CPU Governor
+- Improved Topology Algorithm
+- Improved Stability Kernel
+- Sync from latest AOSP Source 20161119
+
+V1.2 Stable RELEASE :
+- Merged Linux Kernel to 3.4.13
+- Optimized slub
+- Optimized integer sqrt
+- Revert back Krait Retention feature (Not Compatible)
+- Enable H264 High Profile
+- Optimized cpuinit
+- Removed Darkness & Intellidemand CPU Governor 
+- Added Uberdemand & Smartmax CPU Governor
+- Added add cur_load_maxfreq to msm_rq_stats
+- Deleted AutoSMP and Alucard Hotplug
+- Added MSM MPDecision / Briked Hotplug 
+- Improve Graphite Optimization Algorithm
+- Added Intelli Thermal Engine
+- Removed ARM Auto Hotplug feature (Avoid error on stock mpdecision)
+- Improved CPU latency code
+- Enable -Ofast Optimization for compile
+- Improved gcc wrapper for gcc 5
+- Update patch for GCC 5.4.0 (Crosstool-NG)
+- Sync from latest AOSP Source 20161022
+
+( Introduce Hana Kernel )
+V1.1 (Hana Kernel) TEST RELEASE :
+- Improved cpuinit: get rid of __cpuinit
+- Merged Linux Kernel to 3.4.12
+
+V1.2.7 Pre-STABLE RELEASE:
+- Merged Linux Kernel to 3.4.11
+- Added DT2W Feature
+- Added CPU Voltage Control
+- Added OTA Update support from kernel adiutor app
+- Added OC GPU to 500Mhz
+- Added Auto Reboot feature when hold power button in a minute
+- Fixed I/O Sched list
+- Re-added AutoSMP Hotplug
+- Improved Stability
+
+V1.2.5 Pre-STABLE RELEASE:
+- Removed Intelli Plug and AutoSMP Hotplug
+- Added Darkness & Remove HYPER CPU Governor
+- Re-added function "Use RQ Stats for Alucard Hotplug"
+- Improved Intellidemand & Intelliactive CPU Governor
+- Clean Build
+
+V1.2.4 BETA RELEASE:
+- FIX Problem with hotplug not recognized 
+- Added Intellidemand CPU Governor
+- Updated to v5 and Improved Intellidemand Governor for Nicki
+- Updated I/O Sched default list
+- Fix problem on Intelliactive,Intellimm and Lulzactive when compile
+- Update CPU Governor list
+- Added low cpu clock when change hotplug on new cores (192Mhz)
+- Re-Added Intelli Plug Hotplug drivers and Updated it to v3.9
+- Improved IntelliMM CPU Governor for Nicki
+
+V1.2.4 RC1 BETA RELEASE:
+- Reduce DMESG Log Spam on CPU 
+- Use new hashtable implementation on KSM and HGM
+- FIX serious problem on cpu governor (TEST)
+- Enable Fastcharge by default
+- Re added Lulzactive & IntelliMM CPU Governor
+- Added Pegasus Q CPU Governor
+- Removed Smartmax and Darkness CPU Governor
+- Removed Intelli Plug Hotplug Drivers ( Not Compatible )
+- Optimized Alucard Hotplug (Back to old value)
+- Clean Build
+
+V1.2.5 BETA RELEASE:
+- Re-added Smartmax CPU Governor
+- Improved "get cpu idle time" on stock governor
+- Remove Dynamic Interactive & PMC CPU Governor
+- Fix error on stock interactive governor when compile
+- Improved Alucard CPU Governor
+- Full remove implement from ELemental X CPU Governor
+- Clean build
+
+V1.2.3 BETA RELEASE:
+- Removed Intellidemand,Lulzactive and Smartmax cpu governor
+- Added Dynamic Interactive, PMC, and Darkness cpu governor
+- Added Intelli Plug for hotplug drivers
+- Removed Auto SMP hotplug
+- Improved on I/O Sched governor
+- Clean build
+
+V1.2 PRE-BETA RELEASE:
+- Added optimization on cpu governor
+- Added Smartmax cpu governor
+- Removed Impulse and SavagedZen cpu governor
+- Fix problem on intellidemand (slow response)
+
+V1.1 TEST RELEASE:
+- Merge Linux Kernel 3.4.11
+- Added optimization flags on gpu drivers
+- Fix error unrecognized USB fast charge
+- Update USB Fast charge algorithm
+- Enable HFPLL for init only if switching to it
+- Enable Krait Retention for msm8960
+- Enable ARM Hibernation function
+- Add new graphite optimization algorithm
+- Fix priority of thread during adreno start
+- Fix CPU Governor list
+- Added Intelliactive & Remove ElementalX CPU Governor
+- Update Intellidemand CPU Governor
+
+V1.0-RC1 TEST RELEASE:
+- Merge Linux Kernel 3.4.10
+- Optimize Makefile for kernel build
+- Optimize CPU governor list
+- Re Added Impulse,Adaptive and SavagedZen CPU Governor
+
+Hana Core UX v1.0 TEST RELEASE:
+- Merge Linux Kernel 3.4.8 (TEST)
+- Adapt to AOSP 7.0 Source Kernel
+- Merge all change from AoiCore+ Kernel
+- Remove useless cpu governor
+- Added Hana Core defconfig
+- Move to Standalone Kernel (Final for AoiCore+)
