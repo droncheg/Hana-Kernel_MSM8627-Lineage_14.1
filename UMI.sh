@@ -22,7 +22,7 @@ export CROSS_COMPILE=/home/Hana/Linaro_5.4.1/bin/arm-cortex_a15-linux-gnueabihf-
 
 echo "
 ###Building |UMI| Kernel"
-make ARCH=arm umi_nicki_defconfig
+make ARCH=arm hana_kernel_nicki_defconfig
 make ARCH=arm CROSS_COMPILE=/home/Hana/Linaro_5.4.1/bin/arm-cortex_a15-linux-gnueabihf- > UMI.log
 
 echo "

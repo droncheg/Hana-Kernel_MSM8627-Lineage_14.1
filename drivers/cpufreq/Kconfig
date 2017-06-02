@@ -118,12 +118,11 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads	
 
-config CPU_FREQ_DEFAULT_GOV_LULZACTIVE
-	bool "lulzactive"
-	select CPU_FREQ_GOV_LULZACTIVE
-	select CPU_FREQ_GOV_PERFORMANCE
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+	bool "lionheart"
+	select CPU_FREQ_GOV_LIONHEART
 	help
-	  Use the CPUFreq governor 'lulzactive' as default.
+	 Use the CPUFreq governor 'lionheart' as default.
 
 config CPU_FREQ_DEFAULT_GOV_INTELLIMM
         bool "intelliminmax"
@@ -261,15 +260,11 @@ config CPU_FREQ_GOV_INTELLIACTIVE
 
 	  If in doubt, say N.
 
-config CPU_FREQ_GOV_LULZACTIVE
-	tristate "'lulzactive' cpufreq governor"
-	depends on CPU_FREQ
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+	bool "lionheart"
+	select CPU_FREQ_GOV_LIONHEART
 	help
-	  'lulzactive' - a new interactive governor by Tegrak!
-	  For more information please visit:
-	  http://tegrak2x.blogspot.com/2011/11/lulzactive-governor-v2.html
-
-	  If in doubt, say N.	
+	 Use the CPUFreq governor 'lionheart' as default.	
 
 config CPU_FREQ_GOV_INTELLIMM
         tristate "'intelliminmax' cpufreq policy governor"
