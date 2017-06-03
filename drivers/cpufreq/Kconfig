@@ -260,11 +260,14 @@ config CPU_FREQ_GOV_INTELLIACTIVE
 
 	  If in doubt, say N.
 
-config CPU_FREQ_DEFAULT_GOV_LIONHEART
-	bool "lionheart"
-	select CPU_FREQ_GOV_LIONHEART
+config CPU_FREQ_GOV_LIONHEART
+	tristate "lionheart"
+	depends on CPU_FREQ
+	default y
 	help
-	 Use the CPUFreq governor 'lionheart' as default.	
+	 Use the CPUFreq governor 'lionheart' as default.
+
+	  If in doubt, say N	
 
 config CPU_FREQ_GOV_INTELLIMM
         tristate "'intelliminmax' cpufreq policy governor"
