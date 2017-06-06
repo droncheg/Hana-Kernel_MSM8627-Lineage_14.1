@@ -33,6 +33,7 @@
 #include <linux/regulator/consumer.h>
 #include <linux/input/synaptics_dsx.h>
 #include <linux/input/synaptics_dsx_rmi4_i2c.h>
+#include <linux/input/doubletap2wake.h>
 
 #ifdef KERNEL_ABOVE_2_6_38
 #include <linux/input/mt.h>
@@ -40,8 +41,6 @@
 
 #include <linux/wakelock.h>
 #include <linux/input/FIH-tool/config.h>
-
-#include <linux/input/doubletap2wake.h>
 
 #define DRIVER_NAME "synaptics_dsx_i2c"
 #define INPUT_PHYS_NAME "synaptics_dsx_i2c/input0"
