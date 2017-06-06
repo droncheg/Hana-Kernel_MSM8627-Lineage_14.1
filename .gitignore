@@ -63,6 +63,8 @@ include/config
 include/linux/version.h
 include/generated
 arch/*/include/generated
+TEMP/Additional/*.flac
+TEMP/Additional/*.jpg
 
 # stgit generated dirs
 patches-*
