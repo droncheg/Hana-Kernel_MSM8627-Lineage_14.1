@@ -1,5 +1,14 @@
 Changelog :
 
+V1.4.0 UMI RELEASE :
+- Revert back hard float and change to soft float for GPU
+- Update CPU and Voltage Table
+- Revert Optimizations for Cortex A15 (Applied in toolchains only)
+- Optimize I/0 Sched governor
+- Change Lulzactive to Lionheart CPU Governor
+- Optimize DT2W
+- Optimize in stock thermal
+ 
 V1.3.8.1 UMI_R3 RELEASE : (Project UMI - Side Dev of HANA) 
 - Removed press power button to reboot from DT2W integration
 - Added Lulzactive CPU Governor
