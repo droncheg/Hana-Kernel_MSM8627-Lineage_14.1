@@ -16,14 +16,14 @@ echo "###Cleaning old build"
 make clean && make mrproper
 
 echo "
-###Running GCC Toolchains 5.4.1 (Linaro Toolchains)"
+###Running GCC Toolchains 4.9.4 (Linaro Toolchains)"
 export ARCH=arm
-export CROSS_COMPILE=/home/Hana/Linaro_5.4.1/bin/arm-cortex_a15-linux-gnueabihf-
+export CROSS_COMPILE=/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi-
 
 echo "
 ###Building |UMI| Kernel"
 make ARCH=arm hana_kernel_nicki_defconfig
-make ARCH=arm CROSS_COMPILE=/home/Hana/Linaro_5.4.1/bin/arm-cortex_a15-linux-gnueabihf- > UMI.log
+make ARCH=arm CROSS_COMPILE=/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi-- > UMI.log
 
 echo "
 ##Creating Temporary Modules kernel"
@@ -31,7 +31,7 @@ mkdir modules
 cp arch/arm/boot/zImage modules
 find . -name "*.ko" -exec cp {} modules \;
 cd modules
-/home/Hana/Linaro_5.4.1/bin/arm-cortex_a15-linux-gnueabihf-strip --strip-unneeded *.ko
+/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi-strip --strip-unneeded *.ko
 cd /home/Hana/android_kernel_sony_msm8x27-cm-14.1
 mv modules TEMP
 
