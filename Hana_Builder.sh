@@ -18,8 +18,7 @@ java -jar signapk.jar signature-key.Nicklas@XDA.x509.pem signature-key.Nicklas@X
 mv  Hana_Kernel-nicki-signed.zip /home/Hana/Result/Build/Stable/Hana_Kernel-nicki-signed.zip
 rm Hana_Kernel.zip
 
-echo "Shizuka |UMI| Kernel Completed to build"
-echo "Side development of HANA Kernel"
+echo "Hana Kernel Completed to build"
 echo "Thanks to XDA - Developers"
 echo "プロジェクト　ラブライブ | Project HANA (2016)"
 echo "あろがとう　ございます μ's !!!"

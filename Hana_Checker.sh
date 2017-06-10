@@ -8,7 +8,7 @@ if [ -f "$zImage" ]
 then
 	echo "Kernel found."
 	echo "Continue to build kernel"
-	./UMI_Builder.sh
+	./Hana_Builder.sh
 	echo "Playing"
 	message=${1:-"Aozora Jumping Heart"}
 	notify-send -t 10000 -i TEMP/Additional/1.jpg "Aqours" "$message"

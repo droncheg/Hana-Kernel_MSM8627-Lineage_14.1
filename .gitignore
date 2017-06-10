@@ -63,8 +63,11 @@ include/config
 include/linux/version.h
 include/generated
 arch/*/include/generated
-TEMP/Additional/*.flac
-TEMP/Additional/*.jpg
+TEMP/Additional/1.flac
+TEMP/Additional/2.flac
+TEMP/Additional/1.jpg
+TEMP/Additional/2.jpg
+Hana.log
 
 # stgit generated dirs
 patches-*

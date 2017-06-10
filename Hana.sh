@@ -3,7 +3,7 @@
 echo "
 ######################################################
 #                                                    #
-#                Shizuka |UMI| Kernel                #
+#                    Hana Kernel                     #
 #                                                    #
 #                Nicklas Van Dam @XDA                #
 #                                                    #
@@ -21,9 +21,9 @@ export ARCH=arm
 export CROSS_COMPILE=/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi-
 
 echo "
-###Building |UMI| Kernel"
+###Building Hana Kernel"
 make ARCH=arm hana_kernel_nicki_defconfig
-make ARCH=arm CROSS_COMPILE=/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi-- > UMI.log
+make ARCH=arm CROSS_COMPILE=/home/Hana/Linaro_4.9/bin/arm-krait-linux-gnueabi- > Hana.log
 
 echo "
 ##Creating Temporary Modules kernel"
@@ -37,4 +37,4 @@ mv modules TEMP
 
 echo "
 ##Checking Kernel Process"
-./UMI_Checker.sh
+./Hana_Checker.sh
