@@ -2467,27 +2467,19 @@ static struct platform_device msm_tsens_device = {
 	.id = -1,
 };
 
-#ifdef CONFIG_INTELLI_THERMAL
 static struct msm_thermal_data msm_thermal_pdata = {
 	.sensor_id = 9,
 	.poll_ms = 250,
 	.limit_temp_degC = 60,
 	.temp_hysteresis_degC = 10,
 	.freq_step = 2,
-    	.freq_control_mask = 0xf,
+#ifdef CONFIG_INTELLI_THERMAL
+	.freq_control_mask = 0xf,
 	.core_limit_temp_degC = 65,
 	.core_temp_hysteresis_degC = 10,
     	.core_control_mask = 0xe,
-};
-#else
-static struct msm_thermal_data msm_thermal_pdata = {
-	.sensor_id = 9,
-	.poll_ms = 250,
-	.limit_temp_degC = 60,
-	.temp_hysteresis_degC = 10,
-	.freq_step = 2,
-};
 #endif
+};
 
 #ifdef CONFIG_MSM_FAKE_BATTERY
 static struct platform_device fish_battery_device = {
