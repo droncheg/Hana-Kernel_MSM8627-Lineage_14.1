@@ -34,7 +34,6 @@ config THERMAL_MSM_POPMEM
 config THERMAL_TSENS
 	tristate "Qualcomm Tsens Temperature Alarm"
 	depends on THERMAL
-	default n
 	help
 	  This enables the thermal sysfs driver for the Tsens device. It shows
 	  up in Sysfs as a thermal zone with mutiple trip points. Disabling the
