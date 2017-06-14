@@ -374,6 +374,7 @@ static void internal_add_timer(struct tvec_base *base, struct timer_list *timer)
 	list_add_tail(&timer->entry, vec);
 }
 
+<<<<<<< HEAD
 #ifdef CONFIG_TIMER_STATS
 void __timer_stats_timer_set_start_info(struct timer_list *timer, void *addr)
 {
@@ -402,6 +403,7 @@ static void timer_stats_account_timer(struct timer_list *timer)
 static void timer_stats_account_timer(struct timer_list *timer) {}
 #endif
 
+=======
 static void internal_add_timer(struct tvec_base *base, struct timer_list *timer)
 {
 	__internal_add_timer(base, timer);
@@ -415,6 +417,7 @@ static void internal_add_timer(struct tvec_base *base, struct timer_list *timer)
 	}
 }
 
+>>>>>>> 5917574e85a... time: Remove CONFIG_TIMER_STATS
 #ifdef CONFIG_DEBUG_OBJECTS_TIMERS
 
 static struct debug_obj_descr timer_debug_descr;
@@ -998,6 +1001,7 @@ int try_to_del_timer_sync(struct timer_list *timer)
 
 	base = lock_timer_base(timer, &flags);
 
+<<<<<<< HEAD
 	if (base->running_timer == timer)
 		goto out;
 
@@ -1009,9 +1013,10 @@ int try_to_del_timer_sync(struct timer_list *timer)
 		    !tbase_get_deferrable(timer->base))
 			base->next_timer = base->timer_jiffies;
 		ret = 1;
-		
+=======
 	if (base->running_timer != timer) {
 		ret = detach_if_pending(timer, base, true);
+>>>>>>> 5917574e85a... time: Remove CONFIG_TIMER_STATS
 	}
 out:
 	spin_unlock_irqrestore(&base->lock, flags);
