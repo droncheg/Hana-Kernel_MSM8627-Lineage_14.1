@@ -934,12 +934,9 @@ int __hrtimer_start_range_ns(struct hrtimer *timer, ktime_t tim,
 
 	hrtimer_set_expires_range_ns(timer, tim, delta_ns);
 
-<<<<<<< HEAD
 	timer_stats_hrtimer_set_start_info(timer);
-=======
 	/* Switch the timer base, if necessary: */
 	new_base = switch_hrtimer_base(timer, base, mode & HRTIMER_MODE_PINNED);
->>>>>>> 5917574e85a... time: Remove CONFIG_TIMER_STATS
 
 	leftmost = enqueue_hrtimer(timer, new_base);
 
