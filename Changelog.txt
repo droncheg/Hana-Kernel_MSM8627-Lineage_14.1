@@ -8,6 +8,7 @@ V1.4.0 UMI RELEASE :
 - Change Lulzactive to Lionheart CPU Governor
 - Optimize DT2W
 - Optimize in stock thermal
+- Updated Sync kernel source to 05202017
  
 V1.3.8.1 UMI_R3 RELEASE : (Project UMI - Side Dev of HANA) 
 - Removed press power button to reboot from DT2W integration
