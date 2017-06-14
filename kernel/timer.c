@@ -374,7 +374,6 @@ static void internal_add_timer(struct tvec_base *base, struct timer_list *timer)
 	list_add_tail(&timer->entry, vec);
 }
 
-<<<<<<< HEAD
 #ifdef CONFIG_TIMER_STATS
 void __timer_stats_timer_set_start_info(struct timer_list *timer, void *addr)
 {
@@ -403,21 +402,6 @@ static void timer_stats_account_timer(struct timer_list *timer)
 static void timer_stats_account_timer(struct timer_list *timer) {}
 #endif
 
-=======
-static void internal_add_timer(struct tvec_base *base, struct timer_list *timer)
-{
-	__internal_add_timer(base, timer);
-	/*
-	 * Update base->active_timers and base->next_timer
-	 */
-	if (!tbase_get_deferrable(timer->base)) {
-		if (time_before(timer->expires, base->next_timer))
-			base->next_timer = timer->expires;
-		base->active_timers++;
-	}
-}
-
->>>>>>> 5917574e85a... time: Remove CONFIG_TIMER_STATS
 #ifdef CONFIG_DEBUG_OBJECTS_TIMERS
 
 static struct debug_obj_descr timer_debug_descr;
@@ -624,6 +608,11 @@ static void __init_timer(struct timer_list *timer,
 	timer->entry.next = NULL;
 	timer->base = __raw_get_cpu_var(tvec_bases);
 	timer->slack = -1;
+#ifdef CONFIG_TIMER_STATS
+	timer->start_site = NULL;
+	timer->start_pid = -1;
+	memset(timer->start_comm, 0, TASK_COMM_LEN);
+#endif
 	lockdep_init_map(&timer->lockdep_map, name, key, 0);
 }
 
@@ -721,6 +710,7 @@ __mod_timer(struct timer_list *timer, unsigned long expires,
 	unsigned long flags;
 	int ret = 0 , cpu;
 
+	timer_stats_timer_set_start_info(timer);
 	BUG_ON(!timer->function);
 
 	base = lock_timer_base(timer, &flags);
@@ -928,6 +918,7 @@ void add_timer_on(struct timer_list *timer, int cpu)
 	struct tvec_base *base = per_cpu(tvec_bases, cpu);
 	unsigned long flags;
 
+	timer_stats_timer_set_start_info(timer);
 	BUG_ON(timer_pending(timer) || !timer->function);
 	spin_lock_irqsave(&base->lock, flags);
 	timer_set_base(timer, base);
@@ -968,6 +959,7 @@ int del_timer(struct timer_list *timer)
 
 	debug_assert_init(timer);
 
+	timer_stats_timer_clear_start_info(timer);
 	if (timer_pending(timer)) {
 		base = lock_timer_base(timer, &flags);
 		if (timer_pending(timer)) {
@@ -1001,7 +993,6 @@ int try_to_del_timer_sync(struct timer_list *timer)
 
 	base = lock_timer_base(timer, &flags);
 
-<<<<<<< HEAD
 	if (base->running_timer == timer)
 		goto out;
 
@@ -1013,10 +1004,6 @@ int try_to_del_timer_sync(struct timer_list *timer)
 		    !tbase_get_deferrable(timer->base))
 			base->next_timer = base->timer_jiffies;
 		ret = 1;
-=======
-	if (base->running_timer != timer) {
-		ret = detach_if_pending(timer, base, true);
->>>>>>> 5917574e85a... time: Remove CONFIG_TIMER_STATS
 	}
 out:
 	spin_unlock_irqrestore(&base->lock, flags);
@@ -1188,6 +1175,8 @@ static inline void __run_timers(struct tvec_base *base)
 			timer = list_first_entry(head, struct timer_list,entry);
 			fn = timer->function;
 			data = timer->data;
+
+			timer_stats_account_timer(timer);
 
 			base->running_timer = timer;
 			detach_timer(timer, 1);
@@ -1802,6 +1791,8 @@ void __init init_timers(void)
 {
 	int err = timer_cpu_notify(&timers_nb, (unsigned long)CPU_UP_PREPARE,
 				(void *)(long)smp_processor_id());
+
+	init_timer_stats();
 
 	BUG_ON(err != NOTIFY_OK);
 	register_cpu_notifier(&timers_nb);
