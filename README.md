@@ -8,7 +8,6 @@ This kernel is include several feature to increase performance and ARM is aim fo
 This kernel need kernel configuration app to control this kernel, so try to find kernel configuration app after flash this kernel.
 
 This kernel feature is :
-- Linux Kernel Version 3.4.17
 - Compatibility with AOSP,CM And LineageOS based ROM [Android 6.0+]
 - Added overclock up to 1,7Ghz
 - Added Double Tap 2 Wake Feature
@@ -20,9 +19,8 @@ This kernel feature is :
 : zen,sio,sioplus,tripndroid,fifo,fiops and vr
 - Added fast charge feature (Enable By Default)
 - Compiled using GCC 4.9.4 Linaro Toolchains 
-- Add full support NEON VFPV4 feature 
 - Updated I/O Sched default list
-- Sync from latest LineageOS Kernel Source 20170206
+- Sync from latest LineageOS Kernel Source 20170520
 
 More details on changelog for custom build in kernel source
 
@@ -33,7 +31,7 @@ Testing build is still not available on source
 
 #BETA PROJECT / FINAL PROJECT
 
-Build status : DELAYED
+Build status : PREPARED
 
 Thanks to :
 Ron Gokhale (@PecanCM) [For Kernel Source]
