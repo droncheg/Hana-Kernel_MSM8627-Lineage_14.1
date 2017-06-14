@@ -1,5 +1,14 @@
 Changelog :
 
+V1.4.1 HANA RELEASE :
+- Added Intelli Thermal & Removed stock thermal
+- Added IntelliDemand CPU Governor
+- Re-Implement Prevent Sleep to DT2W
+- Revert Optimization for Cortex A15 For toolchains and back to stock
+- Compiled using GCC 4.9.4 Linaro Toolchains
+- Using NEON optimized feature
+- Updated Sync kernel source to 20170617
+
 V1.4.0 UMI RELEASE :
 - Revert back hard float and change to soft float for GPU
 - Update CPU and Voltage Table
@@ -8,7 +17,6 @@ V1.4.0 UMI RELEASE :
 - Change Lulzactive to Lionheart CPU Governor
 - Optimize DT2W
 - Optimize in stock thermal
-- Updated Sync kernel source to 20170520
  
 V1.3.8.1 UMI_R3 RELEASE : (Project UMI - Side Dev of HANA) 
 - Removed press power button to reboot from DT2W integration

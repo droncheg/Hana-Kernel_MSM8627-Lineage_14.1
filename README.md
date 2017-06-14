@@ -20,7 +20,7 @@ This kernel feature is :
 - Added fast charge feature (Enable By Default)
 - Compiled using GCC 4.9.4 Linaro Toolchains 
 - Updated I/O Sched default list
-- Sync from latest LineageOS Kernel Source 20170520
+- Sync from latest LineageOS Kernel Source 20170614
 
 More details on changelog for custom build in kernel source
 
