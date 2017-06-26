@@ -1,5 +1,10 @@
 Changelog :
 
+V1.4.2 Stable Release :
+- Misc fixes
+- Optimize kernel makefile and change to O3 optimization
+- Updated sync kernel source to 20170625
+
 V1.4.1 HANA RELEASE :
 - Added Intelli Thermal & Removed stock thermal
 - Added IntelliDemand CPU Governor
