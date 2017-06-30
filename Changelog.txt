@@ -1,5 +1,10 @@
 Changelog :
 
+V1.4.2-R1 Beta Release :
+- Updated sync kernel source to 20170701
+- Revert O3 optimization
+- Misc change on thermal
+
 V1.4.2 Stable Release :
 - Misc fixes
 - Optimize kernel makefile and change to O3 optimization
