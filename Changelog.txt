@@ -3,6 +3,7 @@ Changelog :
 V1.4.2-R1 Beta Release :
 - Updated sync kernel source to 20170701
 - Revert O3 optimization
+- Add Full F2FS Support
 - Misc change on thermal
 
 V1.4.2 Stable Release :
