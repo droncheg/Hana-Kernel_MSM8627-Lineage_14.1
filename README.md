@@ -13,14 +13,16 @@ This kernel feature is :
 - Added Double Tap 2 Wake Feature
 - Added CPU Voltage Control
 - Added Overclocked GPU to 500Mhz
+- Added Alucard Hotplug
 - Added custom CPU Governor 
+- Added F2FS Support
 : Alucard,Intelliactive,IntelliMM,Lionheart,IntelliDemand & HYPER
 - Added custom I/O Sched Governor 
 : zen,sio,sioplus,tripndroid,fifo,fiops and vr
 - Added fast charge feature (Enable By Default)
-- Compiled using GCC 4.9.4 Linaro Toolchains 
+- Compiled using GCC 4.9 GCC Toolchains 
 - Updated I/O Sched default list
-- Sync from latest LineageOS Kernel Source 20170614
+- Sync from latest LineageOS Kernel Source 20170701
 
 More details on changelog for custom build in kernel source
 
