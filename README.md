@@ -14,8 +14,8 @@ This kernel feature is :
 - Added CPU Voltage Control
 - Added Overclocked GPU to 500Mhz
 - Added Alucard Hotplug
+- Added USB Fastcharge 
 - Added custom CPU Governor 
-- Added F2FS Support
 : Alucard,Intelliactive,IntelliMM,Lionheart,IntelliDemand & HYPER
 - Added custom I/O Sched Governor 
 : zen,sio,sioplus,tripndroid,fifo,fiops and vr
